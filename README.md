@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
-1. Node.js
-2. MongoDB Atlas
-3. NPM
+1. [Node.js](https://nodejs.org/)
+2. [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+3. [NPM](https://www.npmjs.com/)
 
 ### Setting up a Hapi.js Application
 
@@ -27,4 +27,4 @@
 5. Delete a movie
 6. Search for a movie
 
-reference atlas-search `https://www.mongodb.com/docs/atlas/atlas-search/tutorial/run-query/#std-label-fts-tutorial-run-query`
+Reference atlas-search `https://www.mongodb.com/docs/atlas/atlas-search/tutorial/run-query/#std-label-fts-tutorial-run-query`
