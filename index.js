@@ -96,8 +96,22 @@ const init = async () => {
   server.route({
     method: 'DELETE',
     path: '/movies/{id}',
-    handler: (req, h) => {
-      return 'Delete a single movie';
+    options: {
+      validate: {
+        params: Joi.object({
+          id: Joi.objectId(),
+        }),
+      },
+    },
+    handler: async (req, h) => {
+      const id = req.params.id;
+      const ObjectID = req.mongo.ObjectID;
+      const payload = req.payload;
+      const status = await req.mongo.db
+        .collection('movies')
+        .deleteOne({ _id: ObjectID(id) });
+
+      return status;
     },
   });
 
@@ -105,8 +119,33 @@ const init = async () => {
   server.route({
     method: 'GET',
     path: '/search',
-    handler: (req, h) => {
-      return 'Return search results for the specified term';
+    handler: async (req, h) => {
+      const query = req.query.term;
+      const results = await req.mongo.db
+        .collection('movies')
+        .aggregate([
+          {
+            $search: {
+              text: {
+                query: query,
+                path: 'title',
+              },
+            },
+          },
+          {
+            $limit: 5,
+          },
+          {
+            $project: {
+              _id: 0,
+              title: 1,
+              plot: 1,
+            },
+          },
+        ])
+        .toArray();
+
+      return results;
     },
   });
 

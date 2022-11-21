@@ -15,6 +15,8 @@
 - `http://localhost:3000/movies` get movies
 - `npm install @hapi/joi --save`
 - `npm install joi-objectid --save` for validation
+- `http://localhost:3000/search?term=avenger` for search avenger or title
+- `Insert/Update/Delete use postman by id`
 
 ### Building a RESTful API with Hapi.js
 
@@ -24,3 +26,5 @@
 4. Update a movie
 5. Delete a movie
 6. Search for a movie
+
+reference atlas-search `https://www.mongodb.com/docs/atlas/atlas-search/tutorial/run-query/#std-label-fts-tutorial-run-query`
