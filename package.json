@@ -1,0 +1,17 @@
+{
+  "name": "hapi-app",
+  "version": "1.0.0",
+  "description": "https://www.mongodb.com/developer/languages/javascript/hapijs-nodejs-driver/#connecting-our-hapi-js-app-to-mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^21.0.0",
+    "@hapi/joi": "^17.1.1",
+    "hapi-mongodb": "^10.0.3",
+    "joi-objectid": "^4.0.2"
+  }
+}
